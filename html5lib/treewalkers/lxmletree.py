@@ -123,6 +123,9 @@ class TreeWalker(_base.NonRecursiveTreeWalker):
         elif isinstance(tree, list):
             self.fragmentChildren = set(tree)
             tree = FragmentRoot(tree)
+        else:
+            self.fragmentChildren = set()
+
         _base.NonRecursiveTreeWalker.__init__(self, tree)
         self.filter = ihatexml.InfosetFilter()
 
